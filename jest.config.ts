@@ -20,6 +20,7 @@ const config: Config = {
     testMatch: ['<rootDir>/**/*.spec.ts'],
     coverageDirectory: '<rootDir>/coverage/purify',
     collectCoverageFrom: ['<rootDir>/projects/purify/**/*.ts', '!<rootDir>/**/*.spec.ts'],
+    coveragePathIgnorePatterns: ['public-api.ts'],
     coverageReporters: ['html', 'lcov', 'json', 'text'],
     moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, {
         prefix: `<rootDir>/${compilerOptions.baseUrl}/`
