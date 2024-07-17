@@ -8,5 +8,9 @@ export const purify = (payload: string, params: PurifyParams = {}): string => {
 
     const DOMPurify = createDOMPurify(context);
 
+    if (typeof DOMPurify.sanitize !== "function") {
+        throw new Error('Context should be defined');
+    }
+
     return DOMPurify.sanitize(payload);
 }

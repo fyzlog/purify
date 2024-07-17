@@ -17,4 +17,9 @@ describe('PurifyUtils > purify()', () => {
 
         expect(purifiedPayload).toEqual(expectedPayload);
     });
+
+    it('empty context', () => {
+        const purifyUndefinedContext = () => purify('some payload', { context: {} as Window });
+        expect(purifyUndefinedContext).toThrow('Context should be defined');
+    });
 });
